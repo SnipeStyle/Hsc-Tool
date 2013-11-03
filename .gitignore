@@ -39,6 +39,7 @@ data_vault.php
 *.suo
 *.user
 *.sln.docstates
+*.csproj.user
 
 
 # Build results

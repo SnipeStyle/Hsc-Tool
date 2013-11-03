@@ -33,5 +33,14 @@ namespace HscTool.Blam
             Load(reader);
             _classIndex = Index;
         }
+
+        public TagClass(string Name, string Parent, string Grandparent, uint Unknown, Int16 ClassIndex)
+        {
+            _name = Name;
+            _parent = Parent;
+            _grandparent = Grandparent;
+            _unknown = Unknown;
+            _classIndex = ClassIndex;
+        }
     }
 }

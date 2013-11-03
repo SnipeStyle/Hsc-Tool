@@ -31,7 +31,6 @@ namespace HscTool.Blam
         {
             _header = new MapHeader(reader); // read map header
             _MapMagic = CalculateMapMagic();
-            System.Diagnostics.Debug.WriteLine("MapMagic: 0x" + _MapMagic.ToString("X8"));
             if (_MapMagic == 0)
                 throw new Exception("Error: Failed to calculate the map magic.");
             reader.SeekTo(_header.tagTableHeaderAddress - _MapMagic);
@@ -64,7 +63,7 @@ namespace HscTool.Blam
         {
             foreach (Tag tag in _tags)
             {
-                if (tag != null && tag.Class.Name == ClassName)
+                if (tag != null && tag.Class != null && tag.Class.Name == ClassName)
                     return tag;
             }
             return null;
@@ -76,7 +75,7 @@ namespace HscTool.Blam
 
             foreach (Tag tag in _tags)
             {
-                if (tag != null && tag.Class.Name == ClassName)
+                if (tag != null && tag.Class != null && tag.Class.Name == ClassName)
                 {
                     result.Add(tag);
                 }

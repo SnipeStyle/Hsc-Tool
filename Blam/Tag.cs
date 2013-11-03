@@ -22,7 +22,14 @@ namespace HscTool.Blam
             _classIndex = reader.ReadInt16();
             _salt = reader.ReadUInt16();
             _metaAddress = reader.ReadUInt32();
-            _class = Classes[_classIndex];
+            if (_classIndex != -1)
+            {
+                _class = Classes[_classIndex];
+            }
+            else
+            {
+                _class = null;
+            }
         }
 
         public Tag(IReader reader, List<TagClass> Classes)

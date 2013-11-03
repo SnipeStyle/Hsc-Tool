@@ -33,6 +33,7 @@ namespace HscTool
         UInt32 scenarioHsdtAddress;
         UInt32 globalHsdtAddress;
 
+
         #region UI Interaction
         private void MapButton_Click(object sender, EventArgs e)
         {
@@ -129,6 +130,7 @@ namespace HscTool
         }
         #endregion
 
+
         #region Worker
         private void bw_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -183,6 +185,7 @@ namespace HscTool
             extractProgressBar.Value = e.ProgressPercentage;
         }
         #endregion
+
 
         #region Map Methods
         private void ExtractHscMethod(IReader reader, CasheFile Map, List<string> messageList)
